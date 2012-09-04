@@ -1,3 +1,4 @@
 -e git+git://github.com/mikepk/pybald#egg=pybald
 simple-db-migrate==1.4.2
 diff-match-patch==20120106
+psycopg2==2.4.5

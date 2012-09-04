@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=980" />
+<meta http-equiv="P3P" content='CP="NOI DSP COR NID PSAo OUR IND"'>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%block name="meta_description"></%block>\
+<%block name="meta_keywords"></%block>\
+<%block name="rss_feed"></%block>\
+<title><%block name="title_block">\
+${self.title()}\
+% if capture(self.title):
+ - \
+% endif
+Smarterer\
+</%block></title>
+<%def name="title()"></%def>\
+## css should always come before javascript for better parallelization
+<%block name="css">
+${page.add_css('/css/960.css')}
+${page.add_css('/css/reset.css')}
+${page.add_css('/css/mobile.css', media="handheld")}
+${page.add_css('/css/jots.css')}
+</%block>\
+<link href='http://fonts.googleapis.com/css?family=Life+Savers' rel='stylesheet' type='text/css'>
+<%block name="javascript">\
+${page.add_js("/js/jquery-1.7.2.min.js")}
+</%block>\
+<%block name="browser_hacks">\
+<!--[if IE]><link type="text/css" href="/css/ie_hacks.css" media="screen" rel="stylesheet" /><![endif]-->
+<!--[if lt IE 9]>${page.add_js("/js/ie_html5.js")}<![endif]-->
+<!--[if lt IE 7]>${page.add_css('/css/ie6_hacks.css')}<![endif]-->
+</%block>\
+<%block name="additional_page_headers"></%block>\
+<%block name="inline_style"></%block>\
+</head>
+<body>
+  <div id="wrap">
+    <div id="wrap-inner">
+      <header>
+        <%block name="header">
+          %if user:
+          <%include file="/header/logged_in.html.template"/>
+          %else:
+          <%include file="/header/logged_out.html.template"/>
+          %endif
+        </%block>
+      </header>
+      <section id="section_main">
+        ${next.body()}
+      </section>
+    </div>
+  </div>
+  <footer>
+    <%block name="footer">
+    <%include file="/layout/footer.html.template"/>
+    </%block>
+  </footer>
+##%if analytics:
+##<%include file="/layout/footer/analytics.html.template" />
+##%endif
+</body>
+</html>

@@ -1,7 +1,7 @@
 jotbits
 =======
 
-jotbits is a very dirt-simple REST API + note taking interface. It tracks changesets, allows quick creation of notes, and has a powerful fulltext search interface similar to Google's (using Sphinx Search).
+jotbits is a dirt-simple REST API + note taking interface. It tracks changesets, allows quick creation of notes, and has a powerful fulltext search interface similar to Google's (using Sphinx Search).
 
 jotbits is also a sample project and testbed using the pybald web framework.
 

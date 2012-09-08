@@ -8,10 +8,20 @@ def map(urls):
     '''
     urls.connect('home', r'/', controller="home")
 
+    urls.connect('notes', r'/notes', controller="notes", action="new")
+    urls.connect('note_update', r'/notes/{url_slug}', controller="notes",
+                                                action="update",
+                                                conditions=dict(method=["PUT"]))
+    urls.connect('note_show', r'/notes/{url_slug}', controller="notes", action="show",
+                                                conditions=dict(method=["GET"]))
+
+
     # generic pattern
-    urls.connect('base', r'/{controller}/{action}/{id}')
-    urls.connect(r'/{controller}/{action}')
-    urls.connect(r'/{controller}')
+    # urls.connect('base', r'/{controller}/{action}/{id}')
+    # urls.connect(r'/{controller}/{action}')
+    # urls.connect(r'/{controller}')
+
+
 
     # REDIRECT ALL URLS TERMINATING IN a slash, '/', to no slash
     # the opposite is also valid, all urls can be forced to have a slash

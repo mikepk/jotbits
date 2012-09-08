@@ -17,19 +17,19 @@ ${self.title()}\
 % if capture(self.title):
  - \
 % endif
-Smarterer\
+jotbits\
 </%block></title>
 <%def name="title()"></%def>\
 ## css should always come before javascript for better parallelization
 <%block name="css">
-${page.add_css('/css/960.css')}
-${page.add_css('/css/reset.css')}
-${page.add_css('/css/mobile.css', media="handheld")}
-${page.add_css('/css/jots.css')}
+##${page.add_css('/css/960.css')}
+##${page.add_css('/css/reset.css')}
+##${page.add_css('/css/mobile.css', media="handheld")}
 </%block>\
 <link href='http://fonts.googleapis.com/css?family=Life+Savers' rel='stylesheet' type='text/css'>
 <%block name="javascript">\
-${page.add_js("/js/jquery-1.7.2.min.js")}
+${page.add_js("/js/jquery-1.8.1.min.js")}
+${page.add_js("/js/diff_match_patch.js")}
 </%block>\
 <%block name="browser_hacks">\
 <!--[if IE]><link type="text/css" href="/css/ie_hacks.css" media="screen" rel="stylesheet" /><![endif]-->
@@ -44,11 +44,11 @@ ${page.add_js("/js/jquery-1.7.2.min.js")}
     <div id="wrap-inner">
       <header>
         <%block name="header">
-          %if user:
-          <%include file="/header/logged_in.html.template"/>
-          %else:
-          <%include file="/header/logged_out.html.template"/>
-          %endif
+##          %if user:
+##          <%include file="/header/logged_in.html.template"/>
+##          %else:
+##          <%include file="/header/logged_out.html.template"/>
+##          %endif
         </%block>
       </header>
       <section id="section_main">
@@ -58,7 +58,7 @@ ${page.add_js("/js/jquery-1.7.2.min.js")}
   </div>
   <footer>
     <%block name="footer">
-    <%include file="/layout/footer.html.template"/>
+##    <%include file="/layout/footer.html.template"/>
     </%block>
   </footer>
 ##%if analytics:

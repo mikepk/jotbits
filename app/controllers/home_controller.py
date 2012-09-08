@@ -4,4 +4,4 @@ class HomeController(BaseController):
 
     @action
     def index(self, req):
-        return "Pybald is working."
+        pass

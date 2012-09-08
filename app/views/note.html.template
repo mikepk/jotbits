@@ -1,0 +1,25 @@
+<%inherit file="/layout/base.html.template" />
+<%block name="css">
+${parent.css()}
+${page.add_css('/css/jotbits.css')}
+</%block>
+<%block name="javascript">
+${parent.javascript()}
+##${page.add_js('/js/wysihtml5/parser_rules/advanced.js')}
+##${page.add_js('/js/wysihtml5/dist/wysihtml5-0.3.0.min.js')}
+${page.add_js('/js/jotbits.js')}
+</%block>
+##<%block name="footer">
+##${parent.footer()}
+##<script>
+##var editor = new wysihtml5.Editor("note", { // id of textarea element
+##  toolbar:      "wysihtml5-toolbar", // id of toolbar element
+##  stylesheets:          ['/js/wysihtml5/examples/css/stylesheet.css', '/css/jotbits.css'],
+##  parserRules:  wysihtml5ParserRules // defined in parser rules set 
+##});
+##</script>
+##</%block>
+<div id="note_container">
+##<%include file="/toolbar.html.template"/>
+<textarea id="note">${text}</textarea>
+</div>

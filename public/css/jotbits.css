@@ -1,0 +1,49 @@
+#note_container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #DDD;
+
+}
+#note {
+    position: relative;
+    width: 608px;
+    margin: 70px auto 0 auto;
+    overflow: scroll;
+    padding: 18px;
+    font-size: 20px;
+
+    color: #444;
+    border: 1px solid #AAA;
+    display: block;
+    -moz-box-shadow: 0px 2px 5px #AAA;
+    -webkit-box-shadow: 0px 2px 5px #AAA;
+    box-shadow: 0px 2px 5px #AAA;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    /*font-family: 'Life Savers', sans-serif;*/
+    resize: none;
+    height: 80%;
+    background-image: url('/images/graphpaper.jpg');
+}
+
+#note:focus {
+  outline: none;
+}
+
+#wysihtml5-toolbar ul {
+    list-style: none;
+}
+#wysihtml5-toolbar ul li {
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #AAA;
+    background: #EEE;
+    height: 40px;
+    width: 40px;
+}
+
+.wysihtml5-editor {
+       background-image: url('/images/graphpaper.jpg');
+}

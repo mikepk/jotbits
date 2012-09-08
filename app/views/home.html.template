@@ -1,0 +1,6 @@
+<%inherit file="/layout/base.html.template" />
+<%block name="css">
+${parent.css()}
+${page.add_css('/css/jotbits.css')}
+</%block>
+${link("notes").to("notes")} - ${link("search").to("search")}

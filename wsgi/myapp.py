@@ -35,6 +35,7 @@ from pybald.core.db_middleware import DbMiddleware
 
 # load the error controller so that the ErrorMiddleware
 # has somewhere to route the request if an error occurs
+from jotbits.app.controllers.error_controller import ErrorController
 # from quiz_site.app.models.session import Session
 # from quiz_site.app.models.user import User
 
@@ -49,7 +50,7 @@ app = Router(routes=my_project.app.urls.map)
 # app = UserManager(app, user_class=User)
 # app = SessionManager(app, session_class=Session)
 app = DbMiddleware(app)
-app = ErrorMiddleware(app, error_controller=None)
+app = ErrorMiddleware(app, error_controller=ErrorController)
 # ----------------------------------
 #    ↑↑↑                  ↓↓↓
 #    ↑↑↑                  ↓↓↓

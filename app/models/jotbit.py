@@ -9,7 +9,7 @@ def gen_name():
 # sphinx search requires numeric document id's rather than strings
 class JotBit(models.Model):
     url_slug = models.Column(models.Unicode(40), index=True, unique=True)
-    title = models.Column(models.Unicode(120), default=u'')
+    title = models.Column(models.Unicode(140), default=u'')
     text = models.Column(models.UnicodeText, default=u'')
     date_created = models.Column(models.DateTime, default="now()")
 

@@ -21,7 +21,6 @@ from pybald.core.router import Router
 from pybald.core.errors import ErrorMiddleware
 # from pybald.core.sessions import SessionManager
 # from pybald.core.users import UserManager
-# from pybald.core.pybald_logger import PybaldLogger
 
 # Load the project specified in the project file
 my_project = __import__(project.package_name, globals(), locals(),

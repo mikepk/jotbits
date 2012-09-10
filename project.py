@@ -30,7 +30,7 @@ green = False
 page_options = {'analytics' : False}
 
 # additional template helpers to add to the context for all tempaltes
-template_helpers = []
+template_helpers = ['from pybald.core import page']
 
 # project name (otherwise default to the the project's path name)
 project_name = "jotbits"

@@ -1,20 +1,21 @@
 //jb namespace
 var jotbits = new (function() {
-
     // some init stuff
     var dmp = new diff_match_patch();
     dmp.Diff_Timeout = 1.0;
     dmp.Diff_EditCost = 4.0;
 
-    var base_text = ''; //$("#note").val();
+    var base_text = '';
     var new_text = '';
 
     this.save_data = function() {
-        $.ajax({type:'PUT', data:{'text':$('#note').val()}});
+        new_text = $('#note').val();
+        console.log(this.delta(this.diff()));
+        $.ajax({type:'PUT', data:{'text':new_text},
+            success:function() { base_text = new_text; } });
     }
 
     this.diff = function() {
-        new_text = $("#note").val();
         return dmp.diff_main(base_text, new_text);
     }
 
@@ -27,7 +28,6 @@ var jotbits = new (function() {
     }
 
     this.generate_patch = function(diff) {
-        // new_text = $("#note").val();
         var patch_list = dmp.patch_make(base_text, new_text, diff);
         patch_text = dmp.patch_toText(patch_list);
         return patch_text;
